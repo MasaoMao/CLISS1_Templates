@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fileSizeMB = parseFloat(prompt("Enter the file size in MB:"));
+        let speedMbit = parseFloat(prompt("Enter the download speed in MBit/s:"));
+        let fileSizeMbit = fileSizeMB * 8;
+        let timeSeconds = fileSizeMbit / speedMbit;
+        let minutes = Math.floor(timeSeconds / 60);
+        let seconds = Math.round(timeSeconds % 60);
+        alert("Estimated download time: " + minutes + " minute(s) and " + seconds + " second(s)");
+    </script>
+</body>
+</html>

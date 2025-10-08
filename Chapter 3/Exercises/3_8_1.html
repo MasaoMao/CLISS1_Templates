@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Ask the user which shape
+        let shape = prompt("Calculate perimeter for which shape? Type 'rectangle' or 'circle':").toLowerCase();
+        let p;
+        if (shape === "rectangle") {
+            let l = parseFloat(prompt("Whats the length of the rectangle in cm:"));
+            let w = parseFloat(prompt("Whats the width of the rectangle in cm:"));
+            p = 2 * l + 2 * w;
+            alert("The perimeter of the rectangle is: " + p);
+        } else if (shape === "circle") {
+            let r = parseFloat(prompt("Enter the radius of the circle:"));
+            p = 2 * Math.PI * r;
+            p = Math.round(p * 100) / 100; // round to 2 decimal places
+            alert("The perimeter (circumference) of the circle is: " + p);
+        } else {
+            alert("Invalid shape.");
+        }
+    </script>
+</body>
+</html>
