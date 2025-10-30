@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+<img id="foxImg" src="../Templates/Pictures/Fox.png">
+<script>
+    let foxWidth = prompt("Enter the width for the fox (number only):") + "px";
+    let foxHeight = prompt("Enter the height for the fox (number only):") + "px";
+    let bgColor = prompt("Enter the background color (e.g. green, blue, yellow):");
+    document.body.style.backgroundColor = bgColor;
+
+    let fox = document.getElementById("foxImg");
+    fox.style.width = foxWidth;
+    fox.style.height = foxHeight;
+    fox.style.position = "absolute";
+    fox.style.top = "0";
+    fox.style.right = "0";
+
+    document.write('<button id="hideBtn">Hide Fox</button>');
+    document.write('<button id="showBtn">Show Fox</button>');
+    document.getElementById("hideBtn").onclick = function() {
+        fox.style.display = "none";
+    };
+    document.getElementById("showBtn").onclick = function() {
+        fox.style.display = "";
+    };
+</script>
+</body>
+</html>

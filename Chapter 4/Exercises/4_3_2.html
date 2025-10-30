@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+</head>
+<body>
+  <h2>Calculator</h2>
+  <p id="calcText">The result will appear here...</p>
+  <img id="imageShape" src="" width="200" height="200" alt="Shape Image">
+
+  <script>
+    let shape = prompt("Calculate perimeter for which shape? Type 'rectangle' or 'circle':").toLowerCase();
+    let p;
+
+    if (shape === "rectangle") {
+      let l = parseFloat(prompt("Enter the length of the rectangle in cm:"));
+      let w = parseFloat(prompt("Enter the width of the rectangle in cm:"));
+      p = 2 * l + 2 * w;
+
+      document.getElementById("calcText").innerHTML = `P = 2 * l + 2 * w = ${p} cm`;
+      document.getElementById("calcText").style.color = "blue";
+
+      let img = document.getElementById("imageShape");
+      img.src = "../Templates/Pictures/Rectangle_Perimeter.png"; 
+      img.width = 400;
+
+    } else if (shape === "circle") {
+      let r = parseFloat(prompt("Enter the radius of the circle in cm:"));
+      p = 2 * Math.PI * r;
+      p = Math.round(p * 100) / 100; 
+
+     
+      document.getElementById("calcText").innerHTML = `P = 2 * PI * r = ${p} cm`;
+      document.getElementById("calcText").style.color = "red";
+
+      let img = document.getElementById("imageShape");
+      img.src = "../Templates/Pictures/Circle_Perimeter.png"; 
+      img.width = 200;
+
+    } else {
+      alert("Invalid shape entered.");
+    }
+  </script>
+</body>
+</html>
+

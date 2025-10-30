@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manipulation of HTML elements</title>
+  <style>
+    #container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    #imageCaption {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: lightblue;
+      color: white;
+      padding: 10px;
+      font-size: 20px;
+    }
+    .image-box {
+      position: relative;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="background-color:blue; color:white; text-align:center;">Manipulation of HTML elements</h2>
+  
+  <div id="container">
+    <div class="image-box">
+      <img id="mainImage" src="../Templates/Pictures/Winter.jpg" width="400" alt="Winter Image">
+      <div id="imageCaption">Winter Image</div>
+    </div>
+    <p id="oldText">Click the button to display different manipulations of HTML elements.</p>
+    <button onclick="manipulateElements()">Click me!</button>
+  </div>
+
+  <script>
+    let toggled = false;
+
+    function manipulateElements() {
+      const caption = document.getElementById("imageCaption");
+      const text = document.getElementById("oldText");
+      const image = document.getElementById("mainImage");
+
+      if (!toggled) {
+        caption.textContent = "Summer Image";
+        caption.style.backgroundColor = "orange";
+        caption.style.color = "red";
+        caption.style.border = "thick solid";
+
+        image.src = "../Templates/Pictures/Summer.jpg";
+
+        text.textContent = "Summer look of HTML elements.";
+
+        toggled = true;
+      } else {
+        caption.textContent = "Winter Image";
+        caption.style.backgroundColor = "lightblue";
+        caption.style.color = "white";
+        caption.style.border = "none";
+
+        image.src = "../Templates/Pictures/Winter.jpg";
+        text.textContent = "Click the button to display different manipulations of HTML elements.";
+
+        toggled = false;
+      }
+    }
+  </script>
+</body>
+</html>

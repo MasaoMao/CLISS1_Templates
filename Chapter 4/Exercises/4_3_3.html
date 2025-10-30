@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change Layout Paragraph</title>
+</head>
+<body>
+
+  <p id="myParagraph">Here is a paragraph.</p>
+  <button onclick="changeLayout()">Change layout</button>
+
+  <script>
+    function changeLayout() {
+      let para = document.getElementById("myParagraph");
+      para.style.backgroundColor = "red";       
+      para.style.fontSize = "30px";             
+      para.style.color = "white";               
+      para.style.border = "3px solid blue";     
+    }
+  </script>
+</body>
+</html>
