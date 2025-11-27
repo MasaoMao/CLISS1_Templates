@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let date = prompt("enter a month name")
+        if (date == "Febuary") {
+            let year = parseInt(prompt("enter a year"))
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                alert("29 days")
+            }
+            else if (year % 4 != 0 || year % 100 == 0) {
+                alert("28 days")
+            }
+        }
+        else if (date == "April" || date == "June" || date == "September" || date == "November") {
+            alert("30 days")
+        }
+        else if (date == "January" || date == "March" || date == "May" || date == "July" || date == "August" || date == "October" || date == "December") {
+            alert("31 days")
+        }
+        else {
+            alert("invalid month name")
+        }
+    </script>
+</body>
+
+</html>

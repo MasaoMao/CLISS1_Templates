@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="resultText">Here is the result</h1>
+    <script>
+        let byte = parseFloat(prompt("enter the file size in MB"))
+        let speed = parseFloat(prompt("enter the download speed in Mbit/s"))
+        let time = (byte * 8) / speed
+        document.getElementById("resultText").innerHTML="The Dowload time is: " + time + " seconds";
+        if (time < 60) {
+            document.getElementById("resultText").style.color = "green";
+        }
+        else {
+            document.getElementById("resultText").style.color = "blue";
+         }
+    </script>
+</body>
+
+</html>

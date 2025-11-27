@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Math Quiz</h1>
+    <button onclick="startQuiz()">Start Quiz</button>
+
+    <p id="result"></p>
+
+    <script>
+        function startQuiz() {
+            let score = 0;
+
+            let a1 = Math.floor(Math.random() * 10) + 1;
+            let b1 = Math.floor(Math.random() * 10) + 1;
+            let answer1 = prompt("Question 1: What is " + a1 + " + " + b1 + "?");
+            if (answer1 == (a1 + b1)) {
+                alert("Correct!");
+                score++;
+            } else {
+                alert("Wrong! The correct answer is " + (a1 + b1));
+            }
+
+            let a2 = Math.floor(Math.random() * 10) + 1;
+            let b2 = Math.floor(Math.random() * 10) + 1;
+            let answer2 = prompt("Question 2: What is " + a2 + " + " + b2 + "?");
+            if (answer2 == (a2 + b2)) {
+                alert("Correct!");
+                score++;
+            } else {
+                alert("Wrong! The correct answer is " + (a2 + b2));
+            }
+
+            let a3 = Math.floor(Math.random() * 10) + 1;
+            let b3 = Math.floor(Math.random() * 10) + 1;
+            let answer3 = prompt("Question 3: What is " + a3 + " + " + b3 + "?");
+            if (answer3 == (a3 + b3)) {
+                alert("Correct!");
+                score++;
+            } else {
+                alert("Wrong! The correct answer is " + (a3 + b3));
+            }
+
+            let a4 = Math.floor(Math.random() * 10) + 1;
+            let b4 = Math.floor(Math.random() * 10) + 1;
+            let answer4 = prompt("Question 4: What is " + a4 + " + " + b4 + "?");
+            if (answer4 == (a4 + b4)) {
+                alert("Correct!");
+                score++;
+            } else {
+                alert("Wrong! The correct answer is " + (a4 + b4));
+            }
+
+            let a5 = Math.floor(Math.random() * 10) + 1;
+            let b5 = Math.floor(Math.random() * 10) + 1;
+            let answer5 = prompt("Question 5: What is " + a5 + " + " + b5 + "?");
+            if (answer5 == (a5 + b5)) {
+                alert("Correct!");
+                score++;
+            } else {
+                alert("Wrong! The correct answer is " + (a5 + b5));
+            }
+
+            let message = "";
+
+            if (score === 0) {
+                message = "You should definitely practice more your math skills.";
+            }
+            else if (score <= 2) {
+                message = "Not bad, but there is still space for improvement.";
+            }
+            else if (score <= 4) {
+                message = "Well done, you reached a good score.";
+            }
+            else {
+                message = "Amazing you have achieved the highest possible score.";
+            }
+
+            document.getElementById("result").innerHTML = "Your score is " + score + "/5<br>" + message;
+        }
+    </script>
+
+</body>
+
+</html>
