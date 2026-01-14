@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Double the Number</title>
+</head>
+<body>
+
+    <h2>Double the Number</h2>
+    <p id="output">Click the button to double the number.</p>
+
+    <button onclick="doubleNumber()">Double</button>
+
+    <script>
+        let currentNumber = Number(prompt("Enter a number:"));
+
+        document.getElementById("output").textContent =
+            "Current number: " + currentNumber;
+
+        function doubleNumber() {
+            currentNumber = currentNumber * 2;
+            document.getElementById("output").textContent =
+                "Current number: " + currentNumber;
+        }
+    </script>
+
+</body>
+</html>

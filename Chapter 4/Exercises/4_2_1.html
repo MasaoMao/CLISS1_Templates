@@ -6,9 +6,9 @@
 <body>
 <img id="foxImg" src="../Templates/Pictures/Fox.png">
 <script>
-    let foxWidth = prompt("Enter the width for the fox (number only):") + "px";
-    let foxHeight = prompt("Enter the height for the fox (number only):") + "px";
-    let bgColor = prompt("Enter the background color (e.g. green, blue, yellow):");
+    let foxWidth = parseFloat(prompt("Enter the width for the fox (number only):")) + "px";
+    let foxHeight = parseFloat(prompt("Enter the height for the fox (number only):")) + "px";
+    let bgColor = parseFloat(prompt("Enter the background color (e.g. green, blue, yellow):"));
     document.body.style.backgroundColor = bgColor;
 
     let fox = document.getElementById("foxImg");

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 7.3.4 - FizzBuzz</title>
+</head>
+<body>
+<h1>Exercise 7.3.4 – FizzBuzz</h1> 
+
+<p>This page contains two implementations of Fizz/Buzz:</p>
+<ul>
+    <li><strong>Version A:</strong> print "Fizz" for numbers divisible by 3, "Buzz" for numbers divisible by 5 (but not 3), otherwise the number.</li>
+    <li><strong>Version B:</strong> print "FizzBuzz" for numbers divisible by both 3 and 5; otherwise "Fizz" or "Buzz" as appropriate.</li>
+</ul>
+
+<div>
+    <button id="btnA">Run Version A (no combined)</button>
+    <button id="btnB">Run Version B (FizzBuzz combined)</button>
+    <button id="clearBtn">Clear output</button>
+</div>
+
+<pre id="output" style="background:#f6f6f6;border:1px solid #ddd;padding:1rem;max-height:300px;overflow:auto;"></pre>
+
+<script>
+function write(line){
+    console.log(line);
+    const out = document.getElementById('output');
+    out.textContent += line + '\n';
+}
+
+function fizzBuzzA(){
+    document.getElementById('output').textContent = '';
+    for (let i = 1; i <= 100; i++){
+        if (i % 3 === 0){
+            write('Fizz');
+        } else if (i % 5 === 0){
+            write('Buzz');
+        } else {
+            write(String(i));
+        }
+    }
+}
+
+function fizzBuzzB(){
+    document.getElementById('output').textContent = '';
+    for (let i = 1; i <= 100; i++){
+        if (i % 3 === 0 && i % 5 === 0){
+            write('FizzBuzz');
+        } else if (i % 3 === 0){
+            write('Fizz');
+        } else if (i % 5 === 0){
+            write('Buzz');
+        } else {
+            write(String(i));
+        }
+    }
+}
+
+document.getElementById('btnA').addEventListener('click', fizzBuzzA);
+document.getElementById('btnB').addEventListener('click', fizzBuzzB);
+document.getElementById('clearBtn').addEventListener('click', () => { document.getElementById('output').textContent = ''; });
+</script>
+
+</body>
+</html>

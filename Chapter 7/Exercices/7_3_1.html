@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exercise 7.3.1 - Counting</title>
+</head>
+<body>
+<h1>Exercise 7.3.1 – Counting</h1>
+
+<section>
+    <h2>1) Log numbers 1 to 100</h2>
+    <p>Click the button to print numbers 1..100 to the browser console.</p>
+    <button id="btn100">Log 1..100</button>
+</section>
+
+<hr>
+
+<section>
+    <h2>2) Log numbers for a user-specified interval</h2>
+    <p>Enter a minimum and maximum (prompts will appear). The script validates input and prints all integers between min and max (inclusive) to the console.</p>
+    <button id="btnRange">Log interval (prompt)</button>
+</section>
+
+<script>
+function logOneToHundred(){
+    for (let i = 1; i <= 100; i++) {
+        console.log(i);
+    }
+}
+
+function logUserInterval(){
+    const minInput = prompt('Enter the minimum integer:', '1');
+    if (minInput === null) return; 
+    const maxInput = prompt('Enter the maximum integer:', '100');
+    if (maxInput === null) return; 
+
+    const min = parseInt(minInput, 10);
+    const max = parseInt(maxInput, 10);
+
+    if (Number.isNaN(min) || Number.isNaN(max)){
+        alert('Please enter valid integers.');
+        return;
+    }
+    if (min > max){
+        alert('Minimum must be less than or equal to maximum.');
+        return;
+    }
+
+    for (let i = min; i <= max; i++){
+        console.log(i);
+    }
+}
+
+document.getElementById('btn100').addEventListener('click', logOneToHundred);
+document.getElementById('btnRange').addEventListener('click', logUserInterval);
+</script>
+</body>
+</html>

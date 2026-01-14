@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Counter Exercise</title>
+</head>
+<body>
+
+    <h2>Counter</h2>
+
+    <button onclick="increment()">Increment</button>
+    <button onclick="decrement()">Decrement</button>
+    <button onclick="resetCounter()">Reset</button>
+
+    <p id="countDisplay">Count: 0</p>
+
+    <script>
+        let count = 0;
+
+        function updateDisplay() {
+            document.getElementById("countDisplay").textContent = "Count: " + count;
+        }
+
+        function increment() {
+            count++;
+            updateDisplay();
+        }
+
+        function decrement() {
+            count--;
+            updateDisplay();
+        }
+
+        function resetCounter() {
+            count = 0;
+            updateDisplay();
+        }
+    </script>
+
+</body>
+</html>

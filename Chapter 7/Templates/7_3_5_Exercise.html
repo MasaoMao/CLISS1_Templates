@@ -16,6 +16,42 @@
             </p>
         <script>
            //start coding here
+           function calculate(){
+               const mInput = prompt('Enter the base number (m):', '2');
+               if (mInput === null) return; 
+               const nInput = prompt('Enter the exponent (integer n):', '3');
+               if (nInput === null) return; 
+
+               const m = parseFloat(mInput);
+               const n = parseInt(nInput, 10);
+
+               if (Number.isNaN(m) || Number.isNaN(n)){
+                   alert('Please enter valid numbers (exponent must be an integer).');
+                   return;
+               }
+
+               let result = 1;
+
+               if (n === 0){
+                   result = 1; 
+               } else if (n > 0){
+                   for (let i = 0; i < n; i++){
+                       result *= m;
+                   }
+               } else { 
+                   const absN = Math.abs(n);
+                   for (let i = 0; i < absN; i++){
+                       result *= m;
+                   }
+                   result = 1 / result; 
+               }
+
+               const display = Number.isFinite(result) ? result : 'Infinity';
+
+               document.getElementById('result').textContent = display;
+               alert('Result: ' + display);
+               console.log(m + '^' + n + ' = ' + display);
+           }
         </script>
     </body>
 </html>

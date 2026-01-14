@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 7.3.2 - Odd Numbers</title>
+</head>
+<body>
+<h1>Exercise 7.3.2 – Odd Numbers</h1>
+
+<section>
+    <h2>1) Log odd numbers between 200 and 250</h2>
+    <p>Click the button to print all odd numbers from 201 to 249 (inclusive) to the console.</p>
+    <button id="btn200to250">Log odd numbers 200..250</button>
+</section>
+
+<hr>
+
+<section>
+    <h2>2) Log odd numbers for a user-specified interval</h2>
+    <p>Use the prompts to enter a minimum and maximum integer. The script validates input and prints all odd numbers in that inclusive interval to the console.</p>
+    <button id="btnRangeOdd">Log odd numbers (prompt)</button>
+</section>
+
+<script>
+function isOdd(n){
+    return n % 2 !== 0;
+}
+
+
+function logOdd200to250(){
+    for (let i = 201; i <= 249; i += 2){
+        console.log(i);
+    }
+}
+
+
+function logOddUserRange(){
+    const minInput = prompt('Enter minimum integer:', '200');
+    if (minInput === null) return; 
+    const maxInput = prompt('Enter maximum integer:', '250');
+    if (maxInput === null) return; 
+
+    const min = parseInt(minInput, 10);
+    const max = parseInt(maxInput, 10);
+
+    if (Number.isNaN(min) || Number.isNaN(max)){
+        alert('Please enter valid integers.');
+        return;
+    }
+    if (min > max){
+        alert('Minimum must be less than or equal to maximum.');
+        return;
+    }
+
+
+    let start = min;
+    if (!isOdd(start)) start = start + 1;
+
+    for (let n = start; n <= max; n += 2){
+        console.log(n);
+    }
+}
+
+document.getElementById('btn200to250').addEventListener('click', logOdd200to250);
+document.getElementById('btnRangeOdd').addEventListener('click', logOddUserRange);
+</script>
+
+</body>
+</html>
